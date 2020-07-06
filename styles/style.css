@@ -1,11 +1,11 @@
 
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    --color1: hsla(349, 69%, 76%, 1);
-    --color2: rgb(14, 53, 85);
-    --color3: rgb(27, 22, 73);
-    --color4: rgb(17, 30, 46);
-    --color5: rgb(93, 99, 110);
+    --color1: hsla(0, 0%, 21%, 1);
+    --color2: hsla(225, 6%, 25%, 1);
+    --color3: hsla(0, 0%, 28%, 1);
+    --color4: hsla(260, 4%, 33%, 1);
+    --color5: hsla(163, 26%, 27%, 1);
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
