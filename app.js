@@ -1,8 +1,17 @@
 // import functions and grab DOM elements
-import { countsAsYes } from './utils.js';
+import { translateToAYes } from './utils.js';
 
 const quizButton = document.getElementById("quiz-button");
+const homeButton = document.getElementById("home-button");
 const resultSpan = document.getElementById("result-span");
+
+let hideSection1 = document.getElementById("hide1");
+let hideSection2 = document.getElementById("hide2");
+let hideSection3 = document.getElementById("hide3");
+let hideSection4 = document.getElementById("hide4");
+let hideSection5 = document.getElementById("hide5");
+
+const body = document.getElementById("body");
 // initialize state
 
 // set event listeners to update state and DOM
@@ -18,17 +27,79 @@ quizButton.addEventListener('click', () => {
 
     let quizScore = 0;
 
-    if (countsAsYes(eyepatchQ)) {
+    if (translateToAYes(eyepatchQ)) {
         quizScore++;
     };
 
-    if (countsAsYes(heroQ)) {
+    if (translateToAYes(heroQ)) {
         quizScore++;
     };
 
-    if (!countsAsYes(saviorQ)) {
+    if (!translateToAYes(saviorQ)) {
         quizScore++;
     };
 
-    resultSpan.textContent = name + " " + quizScore;
+    if (quizScore === 0) {
+        resultSpan.textContent = name + ", Your score is: " + quizScore +
+         ". I am thoroughly disapointed in you. You know nothing about Snake Plissken!";
+
+        hideSection1.style.display = 'none';
+        hideSection2.style.display = 'none';
+        hideSection3.style.display = 'none';
+        hideSection4.style.display = 'none';
+        hideSection5.style.display = 'none';
+
+        body.style.backgroundImage = "url('Confused-Snake.jpg')";
+    }
+
+    if (quizScore === 1) {
+        resultSpan.textContent = name + ", Your score is: " + quizScore +
+         ". I am very dissapointed in you.";
+
+         hideSection1.style.display = 'none';
+         hideSection2.style.display = 'none';
+         hideSection3.style.display = 'none';
+         hideSection4.style.display = 'none';
+         hideSection5.style.display = 'none';
+
+         body.style.backgroundImage = "url('Confused-Snake.jpg')";
+    }
+
+    if (quizScore === 2) {
+        resultSpan.textContent = "Not bad " + name + ", Your score is: " + quizScore +
+         ". Your knowledge of Snake Plissken is admirable.";
+
+         hideSection1.style.display = 'none';
+         hideSection2.style.display = 'none';
+         hideSection3.style.display = 'none';
+         hideSection4.style.display = 'none';
+         hideSection5.style.display = 'none';
+
+         body.style.backgroundImage = "url('Snake-Plissken.jpg')";
+    }
+
+    if (quizScore === 3) {
+        resultSpan.textContent = "Outstanding! " + name + ", Your score is: " + quizScore +
+         ". You know the legend of Snake Plissken by heart!";
+
+         hideSection1.style.display = 'none';
+         hideSection2.style.display = 'none';
+         hideSection3.style.display = 'none';
+         hideSection4.style.display = 'none';
+         hideSection5.style.display = 'none';
+
+         body.style.backgroundImage = "url('Call-Me-Snake.jpg')";
+    }
+    homeButton.style.display = 'flex';
+})
+
+homeButton.addEventListener('click', () => {
+    hideSection1.style.display = 'flex';
+    hideSection2.style.display = 'flex';
+    hideSection3.style.display = 'flex';
+    hideSection4.style.display = 'flex';
+    hideSection5.style.display = 'flex';
+    homeButton.style.display = 'none';
+    body.style.backgroundImage = "";
+    resultSpan.style.display = 'none';
 })

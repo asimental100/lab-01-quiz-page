@@ -5,7 +5,7 @@ body {
     --color2: hsla(225, 6%, 25%, 1);
     --color3: hsla(0, 0%, 28%, 1);
     --color4: hsla(260, 4%, 33%, 1);
-    --color5: hsla(163, 26%, 27%, 1);
+    --color5: rgb(64, 62, 185);
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -47,4 +47,13 @@ h1 {
 img {
     max-width: 450px;
     max-height: 900px;
+}
+
+#result-span {
+    color: white;
+    font-size: 1rem;
+}
+
+#home-button {
+    display: none;
 }
